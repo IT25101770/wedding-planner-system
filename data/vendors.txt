@@ -1,0 +1,4 @@
+VEN-0001|Dream Lens Studio|Photographer|0771122334|Colombo|85000.0|true
+VEN-0002|Royal Feast Catering|Catering|0774455667|Colombo|150000.0|true
+VEN-0003|Bloom & Bliss Decor|Decoration|0779988776|Colombo|95000.0|true
+VEN-0004|Harmony Live Band|MusicBand|0762223344|Colombo|120000.0|false

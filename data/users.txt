@@ -1,0 +1,7 @@
+CUS-0001|Amaya Fernando|user@wedding.com|user123|0711234567|Colombo
+CUS-16A9A96E|Rusith Anuhas|rusithanuhas@gmail.com|user123|+94 710951040|147/2 government factory officers quarters, Kolonnawa
+CUS-4695FA88|Rusith Anuhas|rusithanuhas@gmail.com|user123|0710951040|147/2 government factory officers quarters, Kolonnawa
+CUS-A196B2F1|Rusith Anuhas|rusithanuhas@gmail.com|user123|0710951040|147/2 government factory officers quarters, Kolonnawa
+CUS-8CBB2451|Rusith Anuhas|rusithanuhas@gmail.com|1111|0710951040|147/2 government factory officers quarters, Kolonnawa
+CUS-7B68651A|Rusith Anuhas|rusithanuhas@gmail.com|12345678|+94 710951040|12
+CUS-6DB9DDA5|lojisagi|lojisagi@gmail.com|lojisagi2002@|+94 754795959|15/1, Krishnar kovil road

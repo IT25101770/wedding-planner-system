@@ -1,0 +1,73 @@
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    window.addEventListener("load", function () {
+        document.body.classList.add("page-loaded");
+    });
+
+    (function () {
+        var nav = document.querySelector(".app-navbar");
+        var links = document.querySelectorAll(".app-navbar .nav-link");
+        var path = window.location.pathname;
+        var lastScrollY = window.scrollY;
+
+        links.forEach(function (link) {
+            var href = link.getAttribute("href");
+            if (href === "/" ? path === "/" : path === href || path.indexOf(href + "/") === 0) {
+                link.classList.add("active");
+            }
+        });
+
+        document.querySelectorAll(".password-toggle").forEach(function (button) {
+            button.addEventListener("click", function () {
+                var input = button.closest(".password-field").querySelector("input");
+                var icon = button.querySelector("i");
+                var isHidden = input.type === "password";
+                input.type = isHidden ? "text" : "password";
+                button.setAttribute("aria-label", isHidden ? "Hide password" : "Show password");
+                icon.className = isHidden ? "bi bi-eye-slash" : "bi bi-eye";
+            });
+        });
+
+        document.querySelectorAll(".phone-field").forEach(function (field) {
+            var codeSelect = field.querySelector(".phone-code");
+            var localInput = field.querySelector(".phone-local");
+            var hiddenInput = field.querySelector("input[name='phone']");
+            var knownCodes = Array.from(codeSelect.options).map(function (option) { return option.value; });
+
+            function splitSavedPhone() {
+                var saved = hiddenInput.value || localInput.value || "";
+                var matched = knownCodes.find(function (code) { return saved.indexOf(code) === 0; });
+                if (matched) {
+                    codeSelect.value = matched;
+                    localInput.value = saved.substring(matched.length).trim();
+                }
+            }
+
+            function syncPhone() {
+                hiddenInput.value = (codeSelect.value + " " + localInput.value.trim()).trim();
+            }
+
+            splitSavedPhone();
+            syncPhone();
+            codeSelect.addEventListener("change", syncPhone);
+            localInput.addEventListener("input", syncPhone);
+            field.closest("form").addEventListener("submit", syncPhone);
+        });
+
+        function updateNav() {
+            if (!nav) {
+                return;
+            }
+            var isScrollingUp = window.scrollY < lastScrollY;
+            var progress = isScrollingUp ? 0 : Math.min(window.scrollY / 140, 1);
+            nav.style.setProperty("--nav-hide-progress", progress.toFixed(2));
+            nav.classList.toggle("nav-hidden", progress > .96);
+            lastScrollY = window.scrollY;
+        }
+
+        updateNav();
+        window.addEventListener("scroll", updateNav, { passive: true });
+    })();
+</script>
+</body>
+</html>
