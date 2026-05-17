@@ -1,1 +1,1 @@
-FDB-0001|CUS-0001|Hasaranga & Sandunika|hello@example.com|5|The vendor booking flow made our planning calm and organized.|Published|2026-05-06
+FDB-0001|CUS-0001|Hasaranga & Sandunika|sadunika@gmail.com|5|The vendor booking flow made our planning calm and organized.|Published|2026-05-06
